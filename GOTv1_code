@@ -1,0 +1,331 @@
+import time
+import random
+items = []
+
+targaryeans = ['Jaehaerys I "the Old King"', 'Aegon V "the Unlikely"',
+               'Daeron II "the Good"', 'Aegon I "the Conqueror"',
+               'Baelor I "the Blessed"', 'Jon "the Prince That Was Promised"']
+
+
+dragons = ['Balerion', 'Vhagar', 'The Cannibal', 'Vermithor', 'Silverwing',
+           'Sheepstealer', 'Dreamfyre', 'Caraxes', 'Meleys', 'Syrax',
+           'Sunfyre']
+
+
+random_names = random.choice(targaryeans)
+random_dragons = random.choice(dragons)
+
+
+def print_pause(string, seconds):
+    time.sleep(seconds)
+    print(string)
+
+
+def intro():
+    print_pause(f'Wake up {random_names} time to conquer Westroes!', 1)
+    print_pause(f'Hurry up mount {random_dragons}, fill the skies with your'
+                ' raging flames, and TAKE THAT THRONE!', 3)
+    print_pause('In the north we have Winterfell where House'
+                ' Stark reside', 3)
+    print_pause('In the east we have Casterly Rock'
+                ' where House Lannister reside', 3)
+    print_pause('In the south we have Storms End'
+                ' where House Baratheon reside', 3)
+    print_pause('In the west we have Pyke where House Greyjoy reside', 3)
+    print_pause('And on your hip hangs "Dark Sister" the legendary'
+                ' Targaryean sword\n', 3)
+
+
+def try_again():
+    print_pause('Your days of conquering has come to an end would'
+                ' you like to redeem yourself?', 2)
+    try_again = input('(Enter "Yes" or "No"):\n').lower()
+    if 'yes' == try_again:
+        intro()
+        game_of_thrones()
+    else:
+        print_pause('Thanks for playing goodbye!', 2)
+
+
+def winner():
+    print_pause('Congratulations you have completed the game', 2)
+    print_pause('Would you like to play again?', 2)
+    response2 = input('(Enter "Yes" or "No"):\n').lower
+    if 'yes' in response2:
+        intro()
+        game_of_thrones()
+    elif 'no' in response2:
+        print_pause('Thanks for playing goodbye!', 2)
+        exit()
+
+
+def winterfell():
+    print_pause('Your dragon stretch its mighty wings north', 2)
+    print_pause('The skies is filled with snow and the land is'
+                ' full of wolves', 2)
+    print_pause('You, your army, and your mighty dragon is'
+                ' heading to the front doorstep of winterfell'
+                ' to face the starks', 2)
+    if 'greyjoybanner' in items:
+        print_pause('The news of what happened to the greyjoys'
+                    ' spread like wildfire', 2)
+        print_pause('Lord Stark knew he only had two options', 2)
+        print_pause('Bend the knee or burn alive along side the'
+                    ' rest of Winterfell', 2)
+        print_pause('The thought of losing his family was enough'
+                    ' to submit to you', 2)
+        print_pause('He got on one knee and named you king of'
+                    ' Westroes', 2)
+        print_pause('From that day forward he was forever'
+                    ' known as the king who bent the knee', 2)
+        items.append('crown')
+        game_of_thrones()
+    else:
+        print_pause('You arive at the front doorstep of Winterfell'
+                    ' and demand an audience with Lord Stark', 3)
+        print_pause('He refuses to bend the knee and an all out war'
+                    ' in Winterfell breaks out!', 3)
+        print_pause('You kill Lord Stark and your mighty dragon turns'
+                    ' half of Winterfell into ash and dye the snow red', 3)
+        print_pause('But a fierce female warrior named Arya Stark shoots'
+                    ' you out the sky with a great bow', 3)
+        print_pause('Leaving a wide hole where your dragons heart used'
+                    ' to be', 3)
+        print_pause('Unable to steer your dead dragon you come crashing'
+                    ' down at 100 miles per hour', 3)
+        print_pause('BOOM!!!!!', 2)
+        print_pause('With every bone in your body shattered you are'
+                    ' unable to move', 3)
+        print_pause('You look around you and see angry northmen that was'
+                    ' loyal to Lord Stark', 3)
+        print_pause('They kill you and feed your remains to the wolfs', 3)
+        print_pause('GAME OVER', 2)
+        try_again()
+
+
+def casterlyrock():
+    print_pause('Your dragon stretch its mighty wings east', 2)
+    print_pause('The sky is as blue as your eyes and the bright sun'
+                ' is gleaming off the great green grass', 2)
+    print_pause('You, your army, and your mighty dragon is approaching'
+                ' Casterly Rock to face the Lannisters', 2)
+    if 'baratheonbanner' in items:
+        print_pause('Thanks to the intel from Lord Baratheon you were'
+                    ' able to successfuly catch the Lannisters off guard', 2)
+        print_pause('Your dragon let off a mighty roar to let the enemys'
+                    ' know the future king is approaching', 2)
+        print_pause('You land your massive dragon in the center of castley'
+                    ' rock and demand an audience with Lord Lannister', 2)
+        print_pause('He immediatly refuses to bend the knee and say he'
+                    ' would rather die than submit to you', 2)
+        print_pause('You look at him feeling pity not for him but'
+                    ' for his people', 2)
+        print_pause('Because they might lose their lifes because their'
+                    ' king is arrogant', 2)
+        print_pause('Your patience is growing thin so you spare the'
+                    ' Lannisters life but give them two options', 2)
+        print_pause('Bend the knee', 2)
+        print_pause('Or', 2)
+        print_pause('Burn', 2)
+        print_pause('You and your army leave and set up camp outside'
+                    ' casterly rock', 2)
+        print_pause('Little did you know your demise was plotted as'
+                    ' soon as you and your army left', 2)
+        print_pause('The Lannisters had secret tunnels spread all across'
+                    ' the land for strategic reasons', 2)
+        print_pause('Luckily they had a tunnel that led right behind your'
+                    ' camp', 2)
+        print_pause('So late at night while you and your army was sleep'
+                    ' they rushed through the tunnels', 2)
+        print_pause('You wake up to the smell of smoke, metal clinging,'
+                    ' and battle cries', 2)
+        print_pause('You grab Dark Sister, go outside, and see your camp on'
+                    ' fire and men fighting for their lives', 2)
+        print_pause('Immediatly you run and try to find your dragon but is'
+                    ' met with 3 Lannister men', 2)
+        print_pause('You run full speed towards them!', 2)
+        print_pause('AHHHHHHHHHHHHH!!!', 2)
+        print_pause('All 3 men take a swing at you but you quickly invade'
+                    ' their blades by sliding in between their legs', 2)
+        print_pause('While the men are stunned you quickly recover behind'
+                    ' them', 2)
+        print_pause('As their heads turns over their shoulders unable to'
+                    ' turn around quickly', 2)
+        print_pause('You take Dark Sister and split all 3 of them in'
+                    ' half with 1 blow', 2)
+        print_pause('While trying to catch your breath you hear someone'
+                    ' clapping closing in on you', 2)
+        print_pause('*Clap* *Clap* *Clap*', 2)
+        print_pause('Its Lord Lannister and 1,000  of his men surrounding'
+                    ' you', 2)
+        print_pause('He tells his men to bring your head to him', 2)
+        print_pause('You smile and lift Dark Sister and tells Lord'
+                    ' Lannister to do his worse', 2)
+        print_pause('As the men approach and you stand your ground you'
+                    ' hear a familiar roar closing in quick', 2)
+        print_pause('*ROARRRRRRRR*', 2)
+        print_pause('Your dragon swoops down breathing hell fire on your'
+                    ' enemys this changes everything', 2)
+        print_pause('You hop and start raining fire on the enemy the whole'
+                    ' battlefield was in flames', 2)
+        print_pause('Lord Lannister surrenders and submit to you', 2)
+        print_pause('The battle will forever be known as the field of fire', 2)
+        items.append('lannisterbanner')
+        game_of_thrones()
+    else:
+        print_pause('You and your army arrive to face the lannisters but'
+                    ' find nobody at the castle', 2)
+        print_pause('At first you think you scared them away but somehow,'
+                    ' someway you know that is not the case', 2)
+        print_pause('You send your army to search the castle a few more'
+                    ' times but still find nobody', 2)
+        print_pause('You then realize a strange smell almost like'
+                    ' gasoline', 2)
+        print_pause('Its all over the place in barrels, on the floor,'
+                    ' and on everything inside the castle', 2)
+        print_pause('It does not take you long to realize what is'
+                    ' about to go down', 2)
+        print_pause('You scream to your army "ITS A TRAPP EVERYBODY'
+                    ' GET OUT OF HERE"', 2)
+        print_pause('As you mount you dragon you see about 10,000'
+                    ' arrows engulfed in flames', 2)
+        print_pause('You try to take off but it is to late you are'
+                    ' hit with 6 arrows and fall off your dragon', 2)
+        print_pause('Your dreams of conquering comes to an end while'
+                    ' you are engufled in flames', 2)
+        print_pause('GAME OVER', 3)
+        try_again()
+
+
+def stormsend():
+    print_pause('Your dragon stretch its mighty wings south', 2)
+    print_pause('The sky is blacker than coal, its raining cats and'
+                ' dogs, and the lighting is louder & quicker than'
+                ' your dragon', 2)
+    print_pause('You, your army, and your mighty dragon is approaching'
+                ' Storms End to face the Baratheons', 2)
+    print_pause("By the grace of god himself you made it to Storms End"
+                " if your dragon was not big you would've lost your life"
+                " in the storm", 2)
+    print_pause('You finally arrive at Storms End with your army and'
+                ' demand an audience with Lord Baratheon', 2)
+    print_pause('He finally comes out with his army of 20,000 men by'
+                ' his side', 2)
+    print_pause('You tell him that he needs to bend the new and claim'
+                ' you as the ruler of Westroes', 2)
+    print_pause('Him and his men did nothing but stand there trying to'
+                ' process the big dragon in their front yard', 2)
+    print_pause('He finally got the courage to speak and finally said', 2)
+    print_pause('"I know if I resist I will lose my land and life so'
+                ' I ask you one thing please marry one of my daughters"', 2)
+    print_pause('(Would you like to marry his daughter):', 2)
+    response1 = input('Enter Y or N\n').lower()
+    if 'y' in response1:
+        print_pause('You accept one of his daughters known as'
+                    ' bella baratheon as your wife as a sign of good faith', 2)
+        print_pause('He finally bends the knee and names you ruler of'
+                    ' Westroes', 2)
+        print_pause('He also gives you important intel on there enemy'
+                    ' the Lannisters', 2)
+        items.append('baratheonbanner')
+        game_of_thrones()
+    else:
+        print_pause('You refuse his daughter and an all out war breaks out', 2)
+        print_pause('You take Lord Baratheon life and burn down'
+                    ' everything you set your eyes on', 2)
+        print_pause('You substain fatal wounds and try to escape but the'
+                    ' storm is too strong for your dragon to fly in', 2)
+        print_pause('Robert Baratheon the son of Lord Baratheon finds you'
+                    ' and drives his axe deep in your chest', 2)
+        print_pause('GAME OVER', 2)
+        try_again()
+
+
+def pyke():
+    print_pause('Your dragon stretch its mighty wings west', 2)
+    print_pause('The skys are cloudy and the sea is dancing', 2)
+    print_pause('You, your army, and your mighty dragon is approaching Pyke'
+                ' to face the Grey Joys', 2)
+    if 'lannisterbanner' in items:
+        print_pause('You arrive at the front doorstep of the Grey Joys but'
+                    ' they were already waiting for you', 2)
+        print_pause('There castle was like an island that had walls up to'
+                    ' 100ft tall made of iron', 2)
+        print_pause('Lord Grey joy shouted "WE ARE NOT SCARED OF YOU!!'
+                    ' YOUR DRAGON IS NOT MATCH FOR MY IRON WALLS"', 2)
+        print_pause('You smiled because you love a good wager so you gave'
+                    ' him until midnight to bend the knee', 2)
+        print_pause('OR', 2)
+        print_pause('Sit and watch while you burn through his entire'
+                    ' iron kingdom', 2)
+        print_pause('Like all the other stubborn Lords he did not listen'
+                    ' and  midnight came very quick', 2)
+        print_pause('Not only did you melt the entire kingdom of pyke to'
+                    ' the ground but you made Lord Grey Joy watch while'
+                    ' you did it', 2)
+        print_pause('Lord Grey Joy fell to his knees and lost all hope', 2)
+        print_pause('He submitted to you and declared you king of Westroes', 2)
+        items.append('greyjoybanner')
+        game_of_thrones()
+    else:
+        print_pause('You are about 10 miles away from Pyke and'
+                    ' see 1,000 ships', 2)
+        print_pause('Its the Grey Joys! the lannisters must have warned'
+                    ' them of your approach', 2)
+        print_pause('A full out war breaks out ships are sinking and arrows'
+                    ' are flying', 2)
+        print_pause('You manage to burn a couple of ships but 2 greatbows'
+                    ' caught you and your dragon off guard', 2)
+        print_pause('You slowly crashed in the ocean and was never heard'
+                    ' from again', 2)
+        print_pause('GAME OVER', 2)
+        try_again()
+
+
+def crownme():
+    if 'crown' in items:
+        print_pause('Congratulations you are now known as the worlds'
+                    ' greatest conquerer', 2)
+        print_pause('Every kingdom you have conquered and all of Westroes'
+                    ' have showed up in kingslanding for your ceremony', 2)
+        print_pause('You have your beautiful wife Bella Baratheon who is'
+                    ' now known as Bella Targaryean beside you', 2)
+        print_pause('You are crowned the biggest crown there is and see'
+                    ' over 100,000 people bend the knee', 2)
+        print_pause('You take all the swords of your enemies and make a'
+                    ' big throne out of it', 2)
+        print_pause('You finally sit on your throne thinking of all the'
+                    ' things you accomplished and take a nice long nap', 2)
+        winner()
+    else:
+        print_pause('YOU ARE NOT WORTHY OF A CROWN!!!!', 2)
+        game_of_thrones()
+
+
+def game_of_thrones():
+    print_pause('(Where would you like to fly your majesty?):\n', 2)
+    response = input('Enter North to conquer Winterfell\n'
+                     'Enter East to conquer Casterly Rock\n'
+                     'Enter South to conquer Storms End\n'
+                     'Enter West to conquer Pyke\n'
+                     'Enter Crown Me to fly to Kings Landing\n').lower()
+    if 'north' in response:
+        winterfell()
+    elif 'east' in response:
+        casterlyrock()
+    elif 'south' in response:
+        stormsend()
+    elif 'west' in response:
+        pyke()
+    elif 'crown me' in response:
+        crownme()
+    else:
+        game_of_thrones()
+
+
+def the_conquest():
+    intro()
+    game_of_thrones()
+
+
+the_conquest()
